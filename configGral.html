@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+	
+  </head>
+  <body>
+    <header id="NavBar" class="fluid-container fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index">
+          <img class="img-fluid" src="https://www.sistemasintegrales.mx/2019/SI-AdministracionArchivos/images/Brand/Logo.svg" width="250" alt="SI">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MenuSup" aria-controls="MenuSup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="MenuSup">
+            <div class="navbar-nav NavMenu">
+
+            </div>
+          </div>
+      </nav>
+    </header>
+    <div style="height: 68px;"></div>
+  	<div class="container">
+      <div class="row">
+        <div class="col-md12">
+          
+          <div id="Admin" class="row">
+            <div class="col-md-12 text-center Cabecera">
+              <h1  style="color:gray;"><i class="fas fa-user-cog"></i> Administrar</h3>
+            </div>
+            <div class="col-md-12 text-center">
+              <p>
+                Bienvenido <strong>USUARIO</strong> aquí podrás administrar todos los recursos del sistema, <br>selecciona el área que deseas configurar/administrar:
+              </p>
+              <div class="Espacio"></div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-general" role="tab" aria-controls="general"><i class="fas fa-cog"></i> General</a>
+                <a class="list-group-item list-group-item-action" id="AltaUsuarios" data-toggle="list" href="#list-altausuarios" role="tab" aria-controls="altausuarios"><i class="fas fa-user-plus"></i> Alta Usuarios</a>
+                <a class="list-group-item list-group-item-action" id="AdminUsuarios" data-toggle="list" href="#list-adminusuadios" role="tab" aria-controls="adminusuadios"><i class="fas fa-users"></i> Admin Usuarios</a>
+                <a class="list-group-item list-group-item-action" id="AltaCliente/Marca" data-toggle="list" href="#list-altaclientemarca" role="tab" aria-controls="altaclientemarca"><i class="fas fa-plus-circle"></i> Alta Cliente/Marca</a>
+                <a class="list-group-item list-group-item-action" id="AdminCliente/Marca" data-toggle="list" href="#list-adminclientemarca" role="tab" aria-controls="adminclientemarca"><i class="fas fa-folder-open"></i> Admin Cliente/Marca</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-8 col-md-8" style="background-color: #f7f7f7;">
+              <div class="tab-content" id="nav-tabContent" style="margin-bottom: 15px">
+                <div class="tab-pane fade text-center show active" id="MainAdmin" role="tabpanel">
+                  <div class="Cabecera">
+                    <h3 style="color:gray;"><i class="fas fa-cog"></i> General</h3>
+                  </div>  
+                  <form id="BrandConfig" class="was-validated">
+                    <div class="form-row">
+                      <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 custom-file" style="margin-bottom: 4.5rem;">
+                        <label for="customLogo">Carga tu logo</label>
+                        <input type="file" class="custom-file-input" id="customLogo">
+                        <label class="custom-file-label" for="customFile" style="top:32px; right: 5px; left: 5px; text-align: left">Buscar</label>
+                        <div style="margin-top: 0.25rem; font-size: 80%;">Archivo .png alto máximo 40px</div>
+                      </div>
+                      <div class="form-group col-12 col-sm-12 col-md-12 col-lg-6 custom-file" style="margin-bottom: 4.5rem;">
+                        <label for="customBackground">Carga tu background</label>
+                        <input type="file" class="custom-file-input" id="customBackground">
+                        <label class="custom-file-label" for="customFile" style="top:32px; right: 5px; left: 5px; text-align: left">Buscar</label>
+                        <div style="margin-top: 0.25rem; font-size: 80%;">Archivo .jpg de 1920x1080px peso máximo 400kb</div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-12 col-sm-12 col-md-6 col-lg-3">
+                        <label for="colorPrincipal">Color Principal</label>
+                        <input type="text" class="form-control" id="colorPrincipal" placeholder="Hexadecimal" maxlength="7" minlenght="4" value="">
+                        <div style="margin-top: 0.25rem; font-size: 80%;">Mínimo 4 carácteres, máximo 7</div>
+                      </div>
+                      <div class="form-group col-12 col-sm-12 col-md-6 col-lg-3">
+                        <label for="colorSecundario">Color Secundario</label>
+                        <input type="text" class="form-control" id="colorSecundario" placeholder="Hexadecimal" maxlength="7" minlenght="4" value="">
+                        <div style="margin-top: 0.25rem; font-size: 80%;">Mínimo 4 carácteres, máximo 7</div>
+                      </div>
+                      <div class="form-group col-12 col-sm-12 col-md-6 col-lg-3">
+                        
+                      </div>
+                      <div class="form-group col-12 col-sm-12 col-md-6 col-lg-3">
+                        
+                      </div>
+                    </div>
+                    <button id="previewBrandConfig" type="button" class="btn btn-info">Previsualización</button>
+                    <button id="setBrandConfig" type="button" class="btn btn-success">Guardar</button>
+                  </form>
+                </div>
+
+                <div class="tab-pane fade text-center" id="list-altausuarios" role="tabpanel" aria-labelledby="list-profile-list">
+                  <div class="Cabecera">
+                    <h3 style="color:gray;"><i class="fas fa-user-plus"></i> Alta Usuarios</h3>				
+                  </div>
+                  <form>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                  <label for="inputPassword4">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                  Check me out
+                  </label>
+                  </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+                <div class="tab-pane fade text-center" id="list-adminusuadios" role="tabpanel" aria-labelledby="list-messages-list">
+                  <div class="Cabecera">
+                    <h3 style="color:gray;"><i class="fas fa-users"></i> Admin Usuarios</h3>
+                  </div>
+                  <form>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                  <label for="inputPassword4">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                  Check me out
+                  </label>
+                  </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+                <div class="tab-pane fade text-center" id="list-altaclientemarca" role="tabpanel" aria-labelledby="list-settings-list">
+                  <div class="Cabecera">
+                    <h3 style="color:gray;"><i class="fas fa-plus-circle"></i> Alta Cliente/Marca</h3>
+                  </div>
+                  <form>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                  <label for="inputPassword4">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                  Check me out
+                  </label>
+                  </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+                <div class="tab-pane fade text-center" id="list-adminclientemarca" role="tabpanel" aria-labelledby="list-settings-list">
+                  <div class="Cabecera">
+                    <h3 style="color:gray;"><i class="fas fa-folder-open"></i> Admin Cliente/Marca</h3>
+                  </div>
+                  <form>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                  <label for="inputPassword4">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                  Check me out
+                  </label>
+                  </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.3.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.3.1.js"></script>
+    
+  <script src="app2.js"></script>
+  </body>
+</html>
