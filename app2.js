@@ -26,20 +26,18 @@ document.getElementById('colorPrincipal').addEventListener('change', (event) => 
 
 //Función para previsualizar los cambios
 const funcPreviewBrandingConfig = previewBrandingConfig.addEventListener('click', (e) => {
-  
+
   //Definimos los colores Principal y Secundario
   const primaryBrandingColor = document.getElementById('colorPrincipal').value;
   const secondaryBrandingColor = document.getElementById('colorSecundario').value;
-  
-  
-  
+
   //Asignamos los colores al Navbar
   if(secondaryBrandingColor === ''){
-     brandingNavbar.style.backgroundColor = `${primaryBrandingColor}`;
+     brandingNavbar.style.background = `${primaryBrandingColor}`;
   } else {
      brandingNavbar.style.background = `linear-gradient(0deg, ${primaryBrandingColor}, ${secondaryBrandingColor})`;
-  }; 
-  
+  }
+
   //Definimos la etiqueta logo para cambiarlo
   const logoBranding = document.getElementById('logoBranding');
   //Definimos el input del logo
@@ -49,8 +47,8 @@ const funcPreviewBrandingConfig = previewBrandingConfig.addEventListener('click'
   //Aplicamos la imagen al elemento
   if(customLogo.value.includes(logoPng)){
      logoBranding.src = `images/${logoPng}`;
-  };
-    
+  }
+
   //Definimos la etiqueta body para cambiarlo
   const backgroundBranding = document.getElementById('Body');
   //Definimos el input del Background
@@ -61,7 +59,7 @@ const funcPreviewBrandingConfig = previewBrandingConfig.addEventListener('click'
   if(customBackground.value.includes(backgroundJpg)){
      backgroundBranding.style.backgroundImage = `url('images/${backgroundJpg}')`;
   }
-  
+
   //Cambiamos el estado del botón de guardar configuración
   saveBrandingConfig.disabled = false;
 });
