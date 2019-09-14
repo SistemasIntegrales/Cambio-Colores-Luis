@@ -21,7 +21,11 @@ document.getElementById('BrandConfig').addEventListener('change', (event) => {
 });
 //Al agregar el color principal se activa el color secundario
 document.getElementById('colorPrincipal').addEventListener('change', (event) => {
-  document.getElementById('colorSecundario').disabled = false;
+  if(document.getElementById('colorPrincipal').value !== ''){
+    document.getElementById('colorSecundario').disabled = false;
+  } else{
+    document.getElementById('colorSecundario').disabled = true;
+  }
 });
 
 //Función para previsualizar los cambios
@@ -53,7 +57,7 @@ const funcPreviewBrandingConfig = previewBrandingConfig.addEventListener('click'
   const backgroundBranding = document.getElementById('Body');
   //Definimos el input del Background
   const customBackground = document.getElementById('customBackground');
-  //Definimos la variable con el texto logo.png
+  //Definimos la variable con el texto background.jpg
   const backgroundJpg = 'background.jpg';
   //Aplicamos la imagen al elemento
   if(customBackground.value.includes(backgroundJpg)){
